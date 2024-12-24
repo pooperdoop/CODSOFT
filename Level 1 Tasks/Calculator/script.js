@@ -12,30 +12,44 @@ CleanUp();
 
 function enterOperation(n){
     let lastChar = screen.value.slice(-1);
-    if(screen.value == null || screen.value == '0'|| screen.value == ''){
+    if((screen.value == null || screen.value == '0'|| screen.value == '') && n != "-"){
         return;
     } else{
-        if(n != '='){
-            if(n == 'D'){
-                screen.value = screen.value.substring(0, screen.value.length-1);
-            }
-            else if(lastChar == '÷' || lastChar == '×'|| lastChar == '-'|| lastChar == '+'){
+        if(n != '=' && screen.value !="-"){
+           
+            if(lastChar == '÷' || lastChar == '×'|| lastChar == '-'|| lastChar == '+'){
                 screen.value = screen.value.substring(0, screen.value.length-1) + n;
             }
             else{
-                screen.value+=n;
+                if(screen.value === '0'){
+                    screen.value = n;
+                } else{
+                    screen.value += n;
+                }
             }
         }
-        else{
+        else if(n =='=' ){
             try{
+
+                let equation = "";
                 screen.value = screen.value.replaceAll('÷', '/');
                 screen.value = screen.value.replaceAll('×', '*');
-                screen.value = eval(screen.value);
+                for(var i = 0; i< screen.value.length; i++){
+                    equation += screen.value.charAt(i);
+                }
+                // unnecessary loop but since it is included in the instructions, I added it in;
+                screen.value = eval(equation);
+
             } catch(e){
                 screen.value = 'Error';
             }
         }
     }
+}
+
+function backspace(n){
+    CleanUp();
+        screen.value = screen.value.substring(0, screen.value.length-1);
 }
 
 function CleanUp(){
