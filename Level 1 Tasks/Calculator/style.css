@@ -1,199 +1,48 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
+* { padding: 0; margin: 0; }
+.container{
+    height: 100vh;
+    background-color: lightblue;
     display: flex;
     justify-content: center;
-    align-items: center;    
-    background-color: rgb(34, 34, 34);
-    interpolate-size: allow-keywords;
+    align-items: center;
+}
+.calculator{
+width: 30%;
+height: 600px;
+background-color: blue;
+border-radius: 35px;
+box-shadow:10px 10px darkblue;
 }
 
-.container{   
-    height: 100dvh;
-    position: relative;
-    border: 5px solid rgb(14, 13, 13);
-    border-radius: 10px;
-    width: 30%;
-    display: block;
-    justify-content: center;
+.inputField{
+    margin: 5%;
+    width: 90%;
+    height: 25%;
 }
-.output_fields{
-    height: 20%;
-}
-.output_fields input{
-    text-align: right;
-    color: white;
-    font-size: xxx-large;
+.screen{
     width: 100%;
-    background-color: rgb(68, 68, 68);
     height: 100%;
+    background-color: lightblue;
+    font-size: 9rem;
     border-radius: 30px;
-    border: none;
-
-}
-
-.additional_buttons {
-    interpolate-size: allow-keywords;
-    height: 6%;
-    transition: height 1s ease;
-    display: block;
-    margin-top: 2%;
-    
-}
-.additional_buttons .upperDiv{
-    width: 100%;
-    height: auto;
-    display: inline-flex;
-    background-color: rgb(34, 34, 34);
-    justify-content: space-between;  
-    justify-items: center;
-}
-.additional_buttons .middleDiv,  .lowerDiv{
-    width: 100%;
-    height: auto;
-    display: inline-flex;
-    background-color: rgb(34, 34, 34);
-    justify-content: space-between;  
-    justify-items: center;
-    transition: all 0.5s ease;
-    opacity: 0;
-}
-.additional_buttons button{
-    margin:5px auto;
-}
-.additional_buttons .buttonType3 {
-    position: relative;
-    display: inline;
-    top: 0px;
-    width: 90px;
-    height: auto;
-    border-radius: 25px;
-    background-color: rgb(34, 34, 34);
-    border: none;
-    transition: 0.5s;
-    color: white;
-    font-size: 30px;
-}
-.additional_buttons .buttonType5 {
-    position: relative;
-    display: inline;
-    top: 0px;
-    width: 90px;
-    height: auto;
-    border-radius: 25px;
-    background-color: rgb(34, 34, 34);
-    border: none;
-    transition: 0.5s;
-    color: white;
-    font-size: 30px;
-}
-.additional_buttons .buttonType4 {
-    margin-right: 20px;
-    margin-top: 10px;
-    width: 30px;
-    height: auto;
-    background-color: rgb(44, 44, 44);  
-    border: none;
-    border-radius: 25px;
-    transition: 0.5s;
-    text-align: center;
-    font-size: 17px;
-    color: white;
-}
-.additional_buttons .buttonType6{
-    margin-right: 20px;
-    margin-top: 10px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: rgb(34, 34, 34);
-    border-radius: 25px;
-    transition: 0.5s;
-    text-align: center;
-    font-size: 17px;
-    color: white;
-}
-
-.buttonType3:hover, .buttonType4:hover, .buttonType5:hover{
-    background-color: rgb(68, 68, 68);
-}
-.buttonType4:hover{
-    border-radius: 10px;
+    text-align: right;
 }
 
 .buttons{
+    width: 90%;
+    height: 60%;
+    border-radius: 10px;
+    margin: 5%;
     display: grid;
-    position: relative;
-    grid-template-columns:repeat(4, 1fr);
-    background-color: rgb(34, 34, 34);
-    justify-content: space-between;  
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    height: 70%;
-    bottom: auto;
-    transition: 1s;
-
 }
+
 .buttons button{
-    z-index: 2;
-    margin-top: 5px;
-    align-self: center;
-    border-radius: 50px;
-    font-size: xx-large;
-    background-color: rgb(44, 44, 44);
-    color: white;
-    width: 100px;
-    height: 80%;
-    min-width: 10px;
-    min-height: 10px;
-    border: none;
-    transition: 0.5s;
-
-}  
-.buttons .buttonType1{
-    background: #fff; 
-    color: black;
-    transition: 0.5s;
-}
-.buttons .buttonType2{
-    background-color: rgb(94, 93, 93);
-    transition: 0.5s;
-}
-
-.buttons button:hover{
-    border-radius: 30px;
-}
-.buttons .buttonType2:active, 
-.buttonType0:active, .buttonType3:active, 
-.buttonType5:active{
-    background-color: rgb(99, 98, 98);
-}
-.additional_buttons:has(.hiddenCheckbox:checked) >.lowerDiv, 
-.additional_buttons:has(.hiddenCheckbox:checked) > .middleDiv {
-    opacity: 1;
-}
-.additional_buttons:has(.hiddenCheckbox:checked){
-    height: auto;
-
-    
-}
-.container:has(.hiddenCheckbox:checked)>.buttons{
-    height: 58%;
-}
-
-
-@media(max-width: 1400px){
-    .container, 
-    .buttons, 
-    .lowerDiv, 
-    .middleDiv, 
-    .upperDiv, 
-    .output_fields{
-        width: 100%;
-    }
-    .buttons button{
-        width: 100%;
-    }
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px black;
+    font-size: 3rem;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
 }
