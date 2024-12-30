@@ -3,15 +3,18 @@
     margin: 0;
     padding: 0;
 }
+
+
 body{
     margin: 0;
 
 }
+
 .container{
+    overflow-y: auto;
     height: 100vh;
-    overflow-y: auto ;
-    overflow-x: hidden;
     perspective: 10px;
+    overflow-x: hidden;
 }
 
 .section{
@@ -36,74 +39,75 @@ body{
 } */
 
 header{
-    background: rgb(20,66,33);
-    background: linear-gradient(0deg, rgba(20,66,33,1) 8%, rgba(184,200,6,1) 36%, rgba(30,144,182,1) 58%);
+    /* background: rgb(20,66,33);
+    background: linear-gradient(0deg, rgba(20,66,33,1) 8%, rgba(184,200,6,1) 36%, rgba(30,144,182,1) 58%); */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
-}
 
+}
 
 .parallax{
+
+}
+
+.parallaxElements{
     position: absolute;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-.cloud{
-    animation: startclouds linear forwards;
-}
+.clouds{
+height: 100%;
+width: 100%;
+object-fit: contain;
+transform: translateZ(-10px) scale(3);
+animation: startclouds ease 3s forwards;
 
-.cloud1{
-    transform: translate(400px, -200px) scale(2);
-    animation: parallax;
-    animation-timeline: scroll();
-    --parallax-speed: 20;
 }
-
-.cloud2{
-    transform: translate(-500px, -250px) scale(2.5);
-    animation: parallax;
-    animation-timeline: scroll();
-    --parallax-speed: 20;
-}
-
 .logo{
-    animation: parallax linear forwards;
-    animation-timeline: scroll();
-    --parallax-speed: 30;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateZ(-5px) scale(2);
+    animation: start ease 2s forwards;
+
 
 }
 .foreground{
     bottom: -100px;
     width: 100%;;
     z-index: 1;
+    animation: startbush ease 3s forwards;
 }
 
-@keyframes parallax{
-    to{
-        transform: translateY(calc(var(--parallax-speed) * 200px));
-    }
+.bgcolor{
+    background: rgb(20,66,33);
+    background: linear-gradient(0deg, rgba(20,66,33,1) 8%, rgba(184,200,6,1) 36%, rgba(30,144,182,1) 58%); 
+    height: 100%;
+    width: 100%;
+    transform: translateZ(-10px) scale(3);
 }
 
 @keyframes startclouds{
-
     from{
         transform: translateY(-1000px)
     }
 }
+
 @keyframes start{
-    to{
-        transform: translateY(0px);
+    from{
+        transform: translateY(1000px);
     }
 }
 
 @keyframes startbush{
-    to{
-        transform: translateY(100px);
+    from{
+        transform: translateY(1000px);
     }
 }
 
