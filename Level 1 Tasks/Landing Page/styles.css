@@ -1,33 +1,29 @@
 *{
-    scrollbar-gutter: stable;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
-    overflow-y: hidden;
     margin: 0;
-    animation: start linear forwards;
-    animation-delay: 4s;
 
+}
+.container{
+    height: 100vh;
+    overflow-y: auto ;
+    overflow-x: hidden;
+    perspective: 10px;
 }
 
 .section{
-    background-image: url(https://picsum.photos/1900/1000);
+    background-color: #144221;
     display: grid;
     place-content: center;
     align-content: center;
     height: 100vh;
-    z-index: -1;
 }
 
 
-.section1{
-    background-image: url(https://picsum.photos/1300/1000);
-    background-size: cover;
-    filter: blur(50px);
-    height: 100vh;
-    animation: test linear 4s forwards;
-}
-
-.test{
+/* .test{
     overflow: auto;
     width: 500px;
     height: 500px;
@@ -37,46 +33,80 @@ body{
     animation-timeline: view();
     opacity: 0;
     animation-range: 100px 500px;
-}
+} */
 
-.test2{
-    width: 500px;
-    height: 300px;
-    background-image: url(images/logo.png);
-    background-size: contain;
-    background-repeat:no-repeat;
-    background-position: center;
-    transform: scale(1);
-    animation: scaledown linear 3s forwards;
-    animation-delay: 1s;
-}
-.section2{
-    z-index: 2;
-    display: grid;
-    place-content: center;
-    align-content: center;
-    position: absolute;
+header{
+    background: rgb(20,66,33);
+    background: linear-gradient(0deg, rgba(20,66,33,1) 8%, rgba(184,200,6,1) 36%, rgba(30,144,182,1) 58%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
 }
 
-@keyframes test{
 
+.parallax{
+    position: absolute;
+    object-fit: contain;
+}
+
+.cloud{
+    animation: startclouds linear forwards;
+}
+
+.cloud1{
+    transform: translate(400px, -200px) scale(2);
+    animation: parallax;
+    animation-timeline: scroll();
+    --parallax-speed: 20;
+}
+
+.cloud2{
+    transform: translate(-500px, -250px) scale(2.5);
+    animation: parallax;
+    animation-timeline: scroll();
+    --parallax-speed: 20;
+}
+
+.logo{
+    animation: parallax linear forwards;
+    animation-timeline: scroll();
+    --parallax-speed: 30;
+
+}
+.foreground{
+    bottom: -100px;
+    width: 100%;;
+    z-index: 1;
+}
+
+@keyframes parallax{
     to{
-        filter: blur(0px);
+        transform: translateY(calc(var(--parallax-speed) * 200px));
+    }
+}
+
+@keyframes startclouds{
+
+    from{
+        transform: translateY(-1000px)
     }
 }
 @keyframes start{
     to{
-        overflow:visible;
+        transform: translateY(0px);
     }
 }
 
-@keyframes scaledown{
+@keyframes startbush{
     to{
-        transform:scale(0);
+        transform: translateY(100px);
     }
 }
+
 
 @keyframes scroll{
     to{
