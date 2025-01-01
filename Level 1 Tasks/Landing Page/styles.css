@@ -1,7 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/rootsquare');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'RootSquare' , sans-serif;
 }
 
 
@@ -18,19 +21,20 @@ body{
 }
 
 .section{
-    background-color: rgba(10,33,17,1);
-    display: grid;
-    place-content: center;
-    align-content: center;
+    background-color:rgba(10,33,17,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 section:nth-child(2){
+    background: #000;
     background: rgb(20,66,33);
-    background: linear-gradient(180deg, rgba(20,66,33,1) 34%, rgba(10,33,17,1) 76%);
+    background: linear-gradient(180deg, rgba(20,66,33,1) 1%, rgba(10,33,17,1) 30%);
 }
 
 
-/* .test{
+.test{
     overflow: auto;
     width: 500px;
     height: 500px;
@@ -40,7 +44,32 @@ section:nth-child(2){
     animation-timeline: view();
     opacity: 0;
     animation-range: 100px 500px;
-} */
+}
+
+.about{
+    overflow: hidden;
+    width: 90%;
+    height: 500px;
+    animation: scroll linear forwards;
+    transform: translatey(-200px);
+    animation-timeline: view();
+    opacity: 0;
+    animation-range: 100px 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 200px;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px white;
+    color: #C6AA58;
+    font-size: 30px;
+}
+
+.about >p{
+    padding-top: 50px;
+
+    text-align: center;
+}
 
 header{
     /* background: rgb(20,66,33);
@@ -120,7 +149,7 @@ header{
     width: 100%;;
     z-index: 1;
     object-fit: contain;
-    animation: start ease 3s forwards;
+    animation: start ease 3.5s forwards;
 }
 
 .bgcolor{
