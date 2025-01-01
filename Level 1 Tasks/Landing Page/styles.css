@@ -74,7 +74,7 @@ animation: startclouds ease 3s forwards;
     height: 50%;    
     bottom: 0px;
     animation: start ease 2s forwards;
-    transform: translateZ(-2px);
+    transform: translateZ(-4px) scale(1.5);
 }
 .pine{
     bottom: 0px;
