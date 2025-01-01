@@ -110,6 +110,7 @@ header{
     bottom: 0px;
     animation: start ease 2.6s forwards;
     transform: translateZ(-5px) scale(1.5);
+    transition: all 1.5s ease;
     
 }
 .pine{
@@ -131,6 +132,7 @@ header{
     animation: start ease 2.8s forwards;
     bottom: 0px;
     transform: translateZ(-9px) scale(1.5);
+    transition: all 1.5s ease;
 
 }
 
@@ -205,3 +207,18 @@ header{
     }
 }
 
+@media only screen and (max-width: 1500px) {
+    .bush, .trees, .trees2{
+        opacity: 0;
+    }
+    .about{
+        padding: 0px;
+        width: 100%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .about{
+       font-size: large;
+    }
+
+  }
