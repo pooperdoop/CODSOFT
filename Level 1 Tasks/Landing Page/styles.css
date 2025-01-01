@@ -64,7 +64,7 @@ header{
 height: 100%;
 width: 100%;
 object-fit: contain;
-transform: translateZ(-5px) scale(2);
+transform: translateZ(-6px) scale(2);
 animation: startclouds ease 3s forwards;
 
 }
@@ -74,7 +74,7 @@ animation: startclouds ease 3s forwards;
     height: 50%;    
     bottom: 0px;
     animation: start ease 2s forwards;
-    transform: translateZ(-5px) scale(2);
+    transform: translateZ(-10px) scale(2);
 }
 .pine{
     bottom: 0px;
