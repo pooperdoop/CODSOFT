@@ -215,6 +215,10 @@ header{
         padding: 0px;
         width: 100%;
     }
+    .logo{
+        transform: scale(0.9);
+    }
+
   }
   @media only screen and (max-width: 900px) {
     .about{
