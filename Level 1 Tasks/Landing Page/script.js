@@ -76,9 +76,15 @@ document.addEventListener("DOMContentLoaded", () =>
       new SmoothScroll(target, 100, 60);
     });
 
+    const bushes = document.querySelectorAll(".bush");
+    const sectioncheck = document.getElementById("aboutSection");
+    console.log(sectioncheck)
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        entry.target.classList.toggle("show", entry.isIntersecting)
+          entry.target.classList.toggle("show", entry.isIntersecting)
       })
-    })
+    }, {threshold: 0.7});
+
+
+   observer.observe(sectioncheck);

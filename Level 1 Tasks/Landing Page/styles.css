@@ -21,18 +21,34 @@ body{
 }
 
 .section{
-    background-color:rgba(10,33,17,1);
+    background: rgb(20,66,33);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 section:nth-child(2){
+    position: relative;
     background: #000;
     background: rgb(20,66,33);
-    background: linear-gradient(180deg, rgba(20,66,33,1) 1%, rgba(10,33,17,1) 30%);
+    background: linear-gradient(180deg, rgba(20,66,33,1) 1%, rgba(10,33,17,1) 10%, rgba(10,33,17,1) 90%, rgba(20,66,33,1) 100%);
 }
-
+/* section:nth-child(3){
+    background: rgb(10,33,17);
+    background: linear-gradient(180deg, rgba(10,33,17,1) 1%, rgba(20,66,33,1) 10%);
+} */
+.bushleft{
+    left:0px;
+    height: 100%;
+    transform: translateX(-1000px);
+    transition: all 1.5s ease;
+}
+.bushright{
+    right:0px;
+    height: 100%;
+    transform: translateX(1000px);
+    transition: all 1.5s ease;
+}
 
 .test{
     overflow: auto;
@@ -48,8 +64,8 @@ section:nth-child(2){
 
 .about{
     overflow: hidden;
-    width: 90%;
-    height: 500px;
+    width: auto;
+    height: 80%;
     animation: scroll linear forwards;
     transform: translatey(-200px);
     animation-timeline: view();
@@ -65,9 +81,8 @@ section:nth-child(2){
     font-size: 30px;
 }
 
-.about >p{
+.about > p{
     padding-top: 50px;
-
     text-align: center;
 }
 
@@ -81,10 +96,6 @@ header{
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
-
-}
-
-.parallax{
 
 }
 
@@ -160,6 +171,20 @@ header{
     transform: translateZ(-10px) scale(3);
 }
 
+.clouds{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transform: translateZ(-10px) scale(2);
+    animation: startclouds ease 3s forwards;
+    
+}
+
+
+.show > img{
+    transform: translateX(0px);
+}
+
 @keyframes startclouds{
     from{
         transform: translateY(-1000px)
@@ -180,12 +205,3 @@ header{
     }
 }
 
-
-.clouds{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    transform: translateZ(-10px) scale(2);
-    animation: startclouds ease 3s forwards;
-    
-    }
