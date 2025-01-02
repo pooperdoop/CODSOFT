@@ -293,6 +293,7 @@ header{
         overflow: hidden;
         width: 100%;
         animation-range-start: -100000px;
+        padding: 0;
     }
 
   }
