@@ -291,9 +291,11 @@ header{
     }
     .innerSection{
         overflow: hidden;
-        width: 100%;
+
         animation-range-start: -100000px;
         padding: 0;
+        background-color: rgba(20,66,33,1);
+        background: none;
     }
 
   }
@@ -303,6 +305,9 @@ header{
     }
     .section2{
         flex-direction: column;
+    }
+    .innerSection{
+        width: auto;
     }
 
 
