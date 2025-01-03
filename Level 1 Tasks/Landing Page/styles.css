@@ -78,6 +78,11 @@ body{
     transform: translateX(1000px);
     transition: all 1.5s ease;
 }
+.bushtop{
+    width: 100%;    
+    object-fit: contain;
+    position: absolute;
+}
 
 .innerSection{
     display: flex;
@@ -166,6 +171,29 @@ header{
 
 }
 
+footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: -1;
+    transform-style: preserve-3d;
+    animation-timeline: view();
+}
+
+.breakerClass{
+    z-index: -1;
+    height: 300px;
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+
+}
+
+
 .parallaxElements{
     position: absolute;
     object-fit: cover;
@@ -243,14 +271,40 @@ header{
     transform: translateZ(-10px) scale(3);
 }
 
+footer >.bgcolor{
+    height: 75%;
+    background: rgb(20,66,33);
+    background: linear-gradient(0deg, rgba(20,66,33,1) 8%, rgba(184,200,6,1) 36%, rgba(30,144,182,1) 58%); 
+}
+
 .clouds{
     height: 100%;
     width: 100%;
     object-fit: contain;
     transform: translateZ(-10px) scale(2);
     animation: startclouds ease 3s forwards;
+    
     transition: all 1.5s ease;
     
+}
+
+.endsection{
+    background: rgb(10,33,17);
+    background: linear-gradient(180deg, rgba(20,66,33,1) 10%, rgba(10,33,17,1)  50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+.endsection >h1{
+    padding-bottom:100px ;
+}
+a{
+   text-decoration: none ;
+   color: #1c99d3;
 }
 
 
