@@ -40,8 +40,7 @@ body{
     justify-content: center;
     height: 200px;
     width: 100%;
-    background: rgba(10,33,17,1);
-    background: linear-gradient(180deg, rgba(20,66,33,1) 1%, rgba(10,33,17,1) 30%, rgba(10,33,17,1));
+    background: rgba(20,66,33,1);
 }
 
 .section2{
@@ -59,15 +58,15 @@ body{
 .section2:nth-child(1){
     border: none;
     border-radius: 0px;
-    background: rgb(10,33,17);
-    background: linear-gradient(180deg, rgba(10,33,17,1) 1%, rgba(20,66,33,1) 10%);
+    background: rgba(20,66,33,1);
 } 
 
 .section2:nth-child(5){
-    border: none;
-    border-radius: 0px;
-    background: rgb(10,33,17);
-    background: linear-gradient(180deg, rgba(20,66,33,1) 90%, rgba(10,33,17,1)  100%);
+    border-radius: 100px;
+    border:none;
+    border-top: #000000 10px solid;
+    background: rgba(20,66,33,1);
+    z-index: 2;
 }
 .bushleft{
     left:0px;
